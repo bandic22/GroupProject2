@@ -1,0 +1,19 @@
+﻿<h1>Modal</h1>
+<label>Name</label>
+<h3>{{vm.item.name}}</h3>
+<label>Description</label>
+<h3>{{vm.item.description}}</h3>
+<label>Minimum Bid</label>
+<h3>{{vm.item.minBid}}</h3>
+<label>Current Bid</label>
+<h3>{{vm.item.currentBid}}</h3>
+<div ng-show="!vm.item.isActive">
+    <h3 style="color:red">this item has ended</h3>
+</div>
+<form ng-submit="vm.createBid()">
+    <label>Make a bid</label>
+    <input type="text" placeholder="Enter Name" ng-model="vm.bid.bidderName"/>
+    <input type="text" placeholder="Enter Bid Amount" ng-model="vm.bid.bidAmount" />
+    <input type="submit" value="Make Bid"/>
+    <h2 ng-show="!vm.validBid" style="color:red">Invalid bid.</h2>
+</form>

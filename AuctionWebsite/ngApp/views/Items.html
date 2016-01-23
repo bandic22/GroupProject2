@@ -1,0 +1,16 @@
+﻿<h1>Items</h1>
+
+<form ng-submit="vm.saveItem()">
+    <input type="text" ng-model="vm.item.name" placeholder="Item name" />
+    <input type="text" ng-model="vm.item.description" placeholder="Item description" />
+    <input type="number" ng-model="vm.item.minBid" placeholder="Minimum bid" />
+    <button type="submit">Save item</button>
+</form>
+
+<ul>
+    <li ng-repeat="item in vm.items">
+        {{item.name}}
+        <button ng-click="vm.openModal(item.id)">See details</button>
+       
+    </li>
+</ul>
